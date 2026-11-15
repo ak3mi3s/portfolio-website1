@@ -46,7 +46,7 @@ const WEB3FORMS_ACCESS_KEY = '3c2736d0-be1f-409a-8894-0e826efadf45'
 const sendEmail = async (e) => {
   e.preventDefault()
 
-  if (WEB3FORMS_ACCESS_KEY === 'PASTE_YOUR_ACCESS_KEY_HERE') {
+  if (WEB3FORMS_ACCESS_KEY === '3c2736d0-be1f-409a-8894-0e826efadf45') {
     contactMessage.textContent = 'Email service not configured yet.'
     return
   }
