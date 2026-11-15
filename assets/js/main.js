@@ -29,27 +29,24 @@ navLink.forEach(n => n.addEventListener('click', linkAction))
 /*=============== SHADOW HEADER ===============*/
 const shadowHeader = () => {
   const header = document.getElementById('header')
-  if (this.scrollY >= 50) header.classList.add('shadow-header')
+  if (window.scrollY >= 50) header.classList.add('shadow-header')
   else header.classList.remove('shadow-header')
 }
 window.addEventListener('scroll', shadowHeader)
 
-/*=============== EMAIL JS ===============*/
+/*=============== CONTACT FORM (WEB3FORMS) ===============*/
 const contactForm = document.getElementById('contact-form'),
       contactMessage = document.getElementById('contact-message')
 
 // Web3Forms: free form-to-email service that works on static sites (GitHub Pages).
-// Get your access key at https://web3forms.com (enter your email, the key is emailed to you).
-// The key is meant to be public, so it is safe to leave in this file.
+// The access key is meant to be public, so it is safe to leave in this file.
 const WEB3FORMS_ACCESS_KEY = '3c2736d0-be1f-409a-8894-0e826efadf45'
 
 const sendEmail = async (e) => {
   e.preventDefault()
 
-  if (WEB3FORMS_ACCESS_KEY === '3c2736d0-be1f-409a-8894-0e826efadf45') {
-    contactMessage.textContent = 'Email service not configured yet.'
-    return
-  }
+  const submitButton = contactForm.querySelector('button[type="submit"]')
+  submitButton.disabled = true
 
   const form = new FormData(contactForm)
   const payload = {
@@ -80,6 +77,8 @@ const sendEmail = async (e) => {
     }
   } catch (error) {
     contactMessage.textContent = 'Message not sent (network error)'
+  } finally {
+    submitButton.disabled = false
   }
 }
 
@@ -90,7 +89,7 @@ if (contactForm) {
 /*=============== SHOW SCROLL UP ===============*/
 const scrollUp = () => {
   const scrollUpEl = document.getElementById('scroll-up')
-  if (this.scrollY >= 350) scrollUpEl.classList.add('show-scroll')
+  if (window.scrollY >= 350) scrollUpEl.classList.add('show-scroll')
   else scrollUpEl.classList.remove('show-scroll')
 }
 window.addEventListener('scroll', scrollUp)
