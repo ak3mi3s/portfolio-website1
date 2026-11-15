@@ -41,7 +41,7 @@ const contactForm = document.getElementById('contact-form'),
 // Web3Forms: free form-to-email service that works on static sites (GitHub Pages).
 // Get your access key at https://web3forms.com (enter your email, the key is emailed to you).
 // The key is meant to be public, so it is safe to leave in this file.
-const WEB3FORMS_ACCESS_KEY = 'PASTE_YOUR_ACCESS_KEY_HERE'
+const WEB3FORMS_ACCESS_KEY = '3c2736d0-be1f-409a-8894-0e826efadf45'
 
 const sendEmail = async (e) => {
   e.preventDefault()
